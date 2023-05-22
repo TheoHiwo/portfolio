@@ -9,17 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.66.6",
+    "@react-three/fiber": "^8.13.0",
+    "@rive-app/canvas": "^1.1.5",
+    "@rive-app/canvas-advanced": "^1.1.5",
+    "@rive-app/react-canvas": "^3.0.46",
     "@types/node": "20.1.0",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.4",
+    "@types/three": "^0.152.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "next": "13.4.1",
     "postcss": "8.4.23",
+    "r3f-perf": "^7.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "three": "^0.152.2",
+    "typescript": "5.0.4",
+    "zustand": "^4.3.8"
   }
 }
