@@ -83,7 +83,7 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
   return (
     <>
       <animated.div
-        key={id}
+        
         ref={refCard}
         className={clsx(
           !open && "place-content-center text-center order-0",
@@ -101,7 +101,7 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
           {/*tags*/}
           <div className={clsx(!open && "place-content-center ", open && "", "text-base gap-x-4 flex opacity-70")}>
             {tags.map((tag) => (
-              <div className={clsx(open && " content-center flex-wrap", "flex flex-row gap-x-2")}>
+              <div key={tag+from} className={clsx(open && " content-center flex-wrap", "flex flex-row gap-x-2")}>
                 <h1 className="">{tag}</h1>
                 {from === "code" && <TagIconCode tag={tag} size={1.2} />}
                 {from === "design" && <TagIconDesign tag={tag} size={1.2} />}
@@ -112,7 +112,7 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
 
         {/*SECONDARY PART*/}
 
-        <CardExtend key={id} content={content} open={open} from={from} />
+        <CardExtend content={content} open={open} from={from} />
       </animated.div>
     </>
   );
