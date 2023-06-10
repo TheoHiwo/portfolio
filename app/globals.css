@@ -15,16 +15,238 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: black;
+    background: #0f0003;
   }
 }
 
-canvas {
-  width: 100vw;
-  height: 100vh;
+:root {
+  --secondary: #261108;
+}
+
+.outline-screen * {
+  outline: #343434 solid 1px;
+  /* pointer-events: none; */
+}
+
+.content {
+  width: 673px;
+  height: 457px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  --tw-pan-y: pan-y;
+  touch-action: var(--tw-pan-x) var(--tw-pan-y) var(--tw-pinch-zoom);
+  /* pointer-events: none; */
+  /* overflow: hidden; */
+  /* cursor: url('/public/cursor.png') 39 39, auto; */
+  /* cursor: url('https://github.com/chenglou/react-motion/raw/master/demos/demo8-draggable-list/cursor.png') 29 29, auto; */
+}
+
+.content * {
+  --tw-pan-y: pan-y;
+  touch-action: var(--tw-pan-x) var(--tw-pan-y) var(--tw-pinch-zoom);
 }
 
 
+.rive-screen {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.pixelart-to-css {
+  position: absolute;
+  left: -67.3px;
+  top: -67.3px;
+  animation: x 5s infinite;
+  -webkit-animation: x 5s infinite;
+  -moz-animation: x 5s infinite;
+  -o-animation: x 5s infinite;
+  /* transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2); */
+}
+
+@keyframes x {
+  0%,
+  11.1% {
+    box-shadow: 471.09999999999997px 67.3px 0 0 var(--secondary), 134.6px 134.6px 0 0 var(--secondary),
+      336.5px 134.6px 0 0 var(--secondary), 605.6999999999999px 134.6px 0 0 var(--secondary),
+      672.9999999999999px 134.6px 0 0 var(--secondary), 67.3px 201.89999999999998px 0 0 var(--secondary),
+      269.2px 201.89999999999998px 0 0 var(--secondary), 538.4px 201.89999999999998px 0 0 var(--secondary),
+      605.6999999999999px 201.89999999999998px 0 0 var(--secondary), 67.3px 269.2px 0 0 var(--secondary),
+      134.6px 269.2px 0 0 var(--secondary), 201.89999999999998px 269.2px 0 0 var(--secondary),
+      336.5px 269.2px 0 0 var(--secondary), 471.09999999999997px 269.2px 0 0 var(--secondary),
+      538.4px 269.2px 0 0 var(--secondary), 67.3px 336.5px 0 0 var(--secondary),
+      134.6px 336.5px 0 0 var(--secondary), 201.89999999999998px 336.5px 0 0 var(--secondary),
+      269.2px 336.5px 0 0 var(--secondary), 336.5px 336.5px 0 0 var(--secondary),
+      403.8px 336.5px 0 0 var(--secondary), 471.09999999999997px 336.5px 0 0 var(--secondary),
+      538.4px 336.5px 0 0 var(--secondary), 605.6999999999999px 336.5px 0 0 var(--secondary),
+      672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  11.11%,
+  22.2% {
+    box-shadow: 403.8px 67.3px 0 0 var(--secondary), 67.3px 134.6px 0 0 var(--secondary),
+      269.2px 134.6px 0 0 var(--secondary), 538.4px 134.6px 0 0 var(--secondary),
+      605.6999999999999px 134.6px 0 0 var(--secondary),
+      201.89999999999998px 201.89999999999998px 0 0 var(--secondary),
+      471.09999999999997px 201.89999999999998px 0 0 var(--secondary),
+      538.4px 201.89999999999998px 0 0 var(--secondary),
+      672.9999999999999px 201.89999999999998px 0 0 var(--secondary), 67.3px 269.2px 0 0 var(--secondary),
+      134.6px 269.2px 0 0 var(--secondary), 269.2px 269.2px 0 0 var(--secondary),
+      403.8px 269.2px 0 0 var(--secondary), 471.09999999999997px 269.2px 0 0 var(--secondary),
+      672.9999999999999px 269.2px 0 0 var(--secondary), 67.3px 336.5px 0 0 var(--secondary),
+      134.6px 336.5px 0 0 var(--secondary), 201.89999999999998px 336.5px 0 0 var(--secondary),
+      269.2px 336.5px 0 0 var(--secondary), 336.5px 336.5px 0 0 var(--secondary),
+      403.8px 336.5px 0 0 var(--secondary), 471.09999999999997px 336.5px 0 0 var(--secondary),
+      538.4px 336.5px 0 0 var(--secondary), 605.6999999999999px 336.5px 0 0 var(--secondary),
+      672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  22.21%,
+  33.3% {
+    box-shadow: 336.5px 67.3px 0 0 var(--secondary), 201.89999999999998px 134.6px 0 0 var(--secondary),
+      471.09999999999997px 134.6px 0 0 var(--secondary), 538.4px 134.6px 0 0 var(--secondary),
+      672.9999999999999px 134.6px 0 0 var(--secondary), 134.6px 201.89999999999998px 0 0 var(--secondary),
+      403.8px 201.89999999999998px 0 0 var(--secondary),
+      471.09999999999997px 201.89999999999998px 0 0 var(--secondary),
+      605.6999999999999px 201.89999999999998px 0 0 var(--secondary), 67.3px 269.2px 0 0 var(--secondary),
+      201.89999999999998px 269.2px 0 0 var(--secondary), 336.5px 269.2px 0 0 var(--secondary),
+      403.8px 269.2px 0 0 var(--secondary), 605.6999999999999px 269.2px 0 0 var(--secondary),
+      672.9999999999999px 269.2px 0 0 var(--secondary), 67.3px 336.5px 0 0 var(--secondary),
+      134.6px 336.5px 0 0 var(--secondary), 201.89999999999998px 336.5px 0 0 var(--secondary),
+      269.2px 336.5px 0 0 var(--secondary), 336.5px 336.5px 0 0 var(--secondary),
+      403.8px 336.5px 0 0 var(--secondary), 471.09999999999997px 336.5px 0 0 var(--secondary),
+      538.4px 336.5px 0 0 var(--secondary), 605.6999999999999px 336.5px 0 0 var(--secondary),
+      672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  33.309999999999995%,
+  44.4% {
+    box-shadow: 269.2px 67.3px 0 0 var(--secondary), 134.6px 134.6px 0 0 var(--secondary),
+      403.8px 134.6px 0 0 var(--secondary), 471.09999999999997px 134.6px 0 0 var(--secondary),
+      605.6999999999999px 134.6px 0 0 var(--secondary), 67.3px 201.89999999999998px 0 0 var(--secondary),
+      336.5px 201.89999999999998px 0 0 var(--secondary), 403.8px 201.89999999999998px 0 0 var(--secondary),
+      538.4px 201.89999999999998px 0 0 var(--secondary), 134.6px 269.2px 0 0 var(--secondary),
+      269.2px 269.2px 0 0 var(--secondary), 336.5px 269.2px 0 0 var(--secondary),
+      538.4px 269.2px 0 0 var(--secondary), 605.6999999999999px 269.2px 0 0 var(--secondary),
+      672.9999999999999px 269.2px 0 0 var(--secondary), 67.3px 336.5px 0 0 var(--secondary),
+      134.6px 336.5px 0 0 var(--secondary), 201.89999999999998px 336.5px 0 0 var(--secondary),
+      269.2px 336.5px 0 0 var(--secondary), 336.5px 336.5px 0 0 var(--secondary),
+      403.8px 336.5px 0 0 var(--secondary), 471.09999999999997px 336.5px 0 0 var(--secondary),
+      538.4px 336.5px 0 0 var(--secondary), 605.6999999999999px 336.5px 0 0 var(--secondary),
+      672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  44.41%,
+  55.6% {
+    box-shadow: 134.6px 67.3px 0 0 var(--secondary), 269.2px 134.6px 0 0 var(--secondary),
+      336.5px 134.6px 0 0 var(--secondary), 471.09999999999997px 134.6px 0 0 var(--secondary),
+      672.9999999999999px 134.6px 0 0 var(--secondary),
+      201.89999999999998px 201.89999999999998px 0 0 var(--secondary),
+      269.2px 201.89999999999998px 0 0 var(--secondary), 403.8px 201.89999999999998px 0 0 var(--secondary),
+      605.6999999999999px 201.89999999999998px 0 0 var(--secondary), 134.6px 269.2px 0 0 var(--secondary),
+      201.89999999999998px 269.2px 0 0 var(--secondary), 403.8px 269.2px 0 0 var(--secondary),
+      471.09999999999997px 269.2px 0 0 var(--secondary), 538.4px 269.2px 0 0 var(--secondary),
+      672.9999999999999px 269.2px 0 0 var(--secondary), 67.3px 336.5px 0 0 var(--secondary),
+      134.6px 336.5px 0 0 var(--secondary), 201.89999999999998px 336.5px 0 0 var(--secondary),
+      269.2px 336.5px 0 0 var(--secondary), 336.5px 336.5px 0 0 var(--secondary),
+      403.8px 336.5px 0 0 var(--secondary), 471.09999999999997px 336.5px 0 0 var(--secondary),
+      538.4px 336.5px 0 0 var(--secondary), 605.6999999999999px 336.5px 0 0 var(--secondary),
+      672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  55.61%,
+  66.7% {
+    box-shadow: 67.3px 67.3px 0 0 var(--secondary), 201.89999999999998px 134.6px 0 0 var(--secondary),
+      269.2px 134.6px 0 0 var(--secondary), 403.8px 134.6px 0 0 var(--secondary),
+      605.6999999999999px 134.6px 0 0 var(--secondary), 134.6px 201.89999999999998px 0 0 var(--secondary),
+      201.89999999999998px 201.89999999999998px 0 0 var(--secondary),
+      336.5px 201.89999999999998px 0 0 var(--secondary), 538.4px 201.89999999999998px 0 0 var(--secondary),
+      67.3px 269.2px 0 0 var(--secondary), 134.6px 269.2px 0 0 var(--secondary),
+      336.5px 269.2px 0 0 var(--secondary), 403.8px 269.2px 0 0 var(--secondary),
+      471.09999999999997px 269.2px 0 0 var(--secondary), 605.6999999999999px 269.2px 0 0 var(--secondary),
+      67.3px 336.5px 0 0 var(--secondary), 134.6px 336.5px 0 0 var(--secondary),
+      201.89999999999998px 336.5px 0 0 var(--secondary), 269.2px 336.5px 0 0 var(--secondary),
+      336.5px 336.5px 0 0 var(--secondary), 403.8px 336.5px 0 0 var(--secondary),
+      471.09999999999997px 336.5px 0 0 var(--secondary), 538.4px 336.5px 0 0 var(--secondary),
+      605.6999999999999px 336.5px 0 0 var(--secondary), 672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  66.71000000000001%,
+  77.8% {
+    box-shadow: 672.9999999999999px 67.3px 0 0 var(--secondary), 134.6px 134.6px 0 0 var(--secondary),
+      201.89999999999998px 134.6px 0 0 var(--secondary), 336.5px 134.6px 0 0 var(--secondary),
+      538.4px 134.6px 0 0 var(--secondary), 67.3px 201.89999999999998px 0 0 var(--secondary),
+      134.6px 201.89999999999998px 0 0 var(--secondary), 269.2px 201.89999999999998px 0 0 var(--secondary),
+      471.09999999999997px 201.89999999999998px 0 0 var(--secondary), 67.3px 269.2px 0 0 var(--secondary),
+      269.2px 269.2px 0 0 var(--secondary), 336.5px 269.2px 0 0 var(--secondary),
+      403.8px 269.2px 0 0 var(--secondary), 538.4px 269.2px 0 0 var(--secondary),
+      672.9999999999999px 269.2px 0 0 var(--secondary), 67.3px 336.5px 0 0 var(--secondary),
+      134.6px 336.5px 0 0 var(--secondary), 201.89999999999998px 336.5px 0 0 var(--secondary),
+      269.2px 336.5px 0 0 var(--secondary), 336.5px 336.5px 0 0 var(--secondary),
+      403.8px 336.5px 0 0 var(--secondary), 471.09999999999997px 336.5px 0 0 var(--secondary),
+      538.4px 336.5px 0 0 var(--secondary), 605.6999999999999px 336.5px 0 0 var(--secondary),
+      672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  77.81%,
+  88.9% {
+    box-shadow: 605.6999999999999px 67.3px 0 0 var(--secondary), 67.3px 134.6px 0 0 var(--secondary),
+      134.6px 134.6px 0 0 var(--secondary), 269.2px 134.6px 0 0 var(--secondary),
+      471.09999999999997px 134.6px 0 0 var(--secondary), 67.3px 201.89999999999998px 0 0 var(--secondary),
+      201.89999999999998px 201.89999999999998px 0 0 var(--secondary),
+      403.8px 201.89999999999998px 0 0 var(--secondary),
+      672.9999999999999px 201.89999999999998px 0 0 var(--secondary),
+      201.89999999999998px 269.2px 0 0 var(--secondary), 269.2px 269.2px 0 0 var(--secondary),
+      336.5px 269.2px 0 0 var(--secondary), 471.09999999999997px 269.2px 0 0 var(--secondary),
+      605.6999999999999px 269.2px 0 0 var(--secondary), 672.9999999999999px 269.2px 0 0 var(--secondary),
+      67.3px 336.5px 0 0 var(--secondary), 134.6px 336.5px 0 0 var(--secondary),
+      201.89999999999998px 336.5px 0 0 var(--secondary), 269.2px 336.5px 0 0 var(--secondary),
+      336.5px 336.5px 0 0 var(--secondary), 403.8px 336.5px 0 0 var(--secondary),
+      471.09999999999997px 336.5px 0 0 var(--secondary), 538.4px 336.5px 0 0 var(--secondary),
+      605.6999999999999px 336.5px 0 0 var(--secondary), 672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+  88.91000000000001%,
+  100% {
+    box-shadow: 538.4px 67.3px 0 0 var(--secondary), 67.3px 134.6px 0 0 var(--secondary),
+      201.89999999999998px 134.6px 0 0 var(--secondary), 403.8px 134.6px 0 0 var(--secondary),
+      672.9999999999999px 134.6px 0 0 var(--secondary), 134.6px 201.89999999999998px 0 0 var(--secondary),
+      336.5px 201.89999999999998px 0 0 var(--secondary),
+      605.6999999999999px 201.89999999999998px 0 0 var(--secondary),
+      672.9999999999999px 201.89999999999998px 0 0 var(--secondary), 134.6px 269.2px 0 0 var(--secondary),
+      201.89999999999998px 269.2px 0 0 var(--secondary), 269.2px 269.2px 0 0 var(--secondary),
+      403.8px 269.2px 0 0 var(--secondary), 538.4px 269.2px 0 0 var(--secondary),
+      605.6999999999999px 269.2px 0 0 var(--secondary), 67.3px 336.5px 0 0 var(--secondary),
+      134.6px 336.5px 0 0 var(--secondary), 201.89999999999998px 336.5px 0 0 var(--secondary),
+      269.2px 336.5px 0 0 var(--secondary), 336.5px 336.5px 0 0 var(--secondary),
+      403.8px 336.5px 0 0 var(--secondary), 471.09999999999997px 336.5px 0 0 var(--secondary),
+      538.4px 336.5px 0 0 var(--secondary), 605.6999999999999px 336.5px 0 0 var(--secondary),
+      672.9999999999999px 336.5px 0 0 var(--secondary);
+    height: 67.3px;
+    width: 67.3px;
+  }
+}
 /*Allow events to pass throw */
 .parent-event-none {
   pointer-events: none;

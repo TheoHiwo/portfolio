@@ -1,11 +1,15 @@
+
+
 import "./globals.css";
 import { Layout } from '@/components/dom/Layout';
 // import '@/global.css'
-import { Inter } from "next/font/google";
+import { VT323 } from "next/font/google";
 
-const inter = Inter({
-  subsets: ["latin"],
+const pixel = VT323({
+  weight: '400',
+  subsets: ['latin-ext'],
 });
+
 
 
 
@@ -19,7 +23,7 @@ export default function RootLayout({ children } : {children : any}) {
   return (
     <html lang='en' className='antialiased'>
       <head />
-      <body className={inter.className}>
+      <body className={pixel.className}>
         <Layout>{children}</Layout>
       </body>
     </html>

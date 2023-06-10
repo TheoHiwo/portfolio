@@ -1,20 +1,37 @@
 "use client";
 
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import MomijiNetwork from "./MomijiNetwork";
+import { OrbitControls, PerspectiveCamera, Loader } from "@react-three/drei";
+import { Canvas, useThree } from "@react-three/fiber";
+import Momiji from "./Momiji";
+import { Suspense } from "react";
+import { Perf } from "r3f-perf";
 
-export default function Scene({
-  ...props
-}) {
+const Debug = () => {
+  const { width } = useThree((s) => s.size)
   return (
+    <Perf
+      minimal={true}
+      matrixUpdate
+      deepAnalyze
+      overClock
+      // customData={{
+      //   value: 60,
+      //   name: 'physic',
+      //   info: 'fps'
+      // }}
+    />
+  )
+}
+
+export default function Scene({ ...props }) {
+  return (
+    <>
     <Canvas {...props}>
-      <OrbitControls />
-      <ambientLight />
-      <pointLight
-        position={[10, 10, 10]}
-      />
-      <MomijiNetwork />
+        {/* <Debug /> */}
+        <Momiji />
     </Canvas>
+    <Loader />
+    </>
   );
 }
+
