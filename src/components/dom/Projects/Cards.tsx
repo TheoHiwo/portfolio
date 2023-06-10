@@ -79,12 +79,11 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
     },
     { drag: { delay: true } }
   );
-  
 
   return (
     <>
       <animated.div
-      key={id}
+        key={id}
         ref={refCard}
         className={clsx(
           !open && "place-content-center text-center order-0",
@@ -95,7 +94,6 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
         {...bind()}
         style={widthWrapper}
         // onClick={handleClick}
-
       >
         {/*MAIN PART*/}
         <animated.div style={spring} className={clsx(open && "flex justify-between", !open && "")}>
@@ -114,7 +112,7 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
 
         {/*SECONDARY PART*/}
 
-        <CardExtend content={content} open={open} from={from} />
+        <CardExtend key={id} content={content} open={open} from={from} />
       </animated.div>
     </>
   );
