@@ -2,6 +2,14 @@ import React from "react";
 import EyeTrack from "@/components/rive/EyeTrack";
 import { animated, config, useSpring } from "@react-spring/web";
 import { useGesture, useScroll } from "@use-gesture/react";
+import { Press_Start_2P } from "next/font/google";
+import { clsx } from 'clsx';
+
+export const arcadeArcade = Press_Start_2P({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 type Props = {};
 
@@ -18,8 +26,8 @@ export default function Home({}: Props) {
         momiji connected successfully in 1301.96years (8 branches)
       </div>
 
-      <div className="text-center m-auto text-7xl tracking-widest">
-        <h1 className="">THEO</h1>
+      <div className={clsx("text-center m-auto text-7xl tracking-widest")}>
+        <h1 className={arcadeArcade.className}>THEO</h1>
         <h1 className="">BERRABOUKH</h1>
         <div className="h-1/2">
           <EyeTrack />

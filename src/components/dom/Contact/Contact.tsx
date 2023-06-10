@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import EyeTrack from "@/components/rive/EyeTrack";
 import { animated, config, useSpring } from "@react-spring/web";
 import { useGesture, useHover, useScroll } from "@use-gesture/react";
+import clsx from "clsx";
+import { arcadeArcade } from "../Home/Home";
 
 type Props = {};
 
@@ -18,7 +20,7 @@ export default function Contact({}: Props) {
   });
 
   return (
-    <div className=" h-[500px] text-primary bg-secondary ">
+    <div className=" h-[700px] text-primary bg-secondary ">
       <div className="flex justify-between align-center pt-10 px-10">
         <div className="h-20 w-20">
           <EyeTrack />
@@ -27,9 +29,9 @@ export default function Contact({}: Props) {
           <div
             //@ts-ignore
             {...bind()}
-            className="flex flex-col justify-between items-center px-10"
+            className="flex flex-col justify-between items-center text-clickable hover:text-clickable/80 py-4 px-5"
           >
-            <h1 className="text-6xl self-center" {...springContact}>
+            <h1 className={clsx("text-4xl self-center", arcadeArcade.className)} {...springContact}>
               CONTACT ME
             </h1>
             <h1 className="text-4xl">rara21400@gmail.com</h1>

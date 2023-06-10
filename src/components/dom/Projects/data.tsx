@@ -31,7 +31,7 @@ export interface IProjectProp {
 export const cards: IProjectProp[] = [
   {
     id: 0,
-    title: "blueArt",
+    title: "BlueArt",
     tags: ["ReactJS", "TypeScript", "ChakraUI"],
     description:
       "An Instagram-like gallery of paintings and wonderful artworks, predominantly in tints of blue. All thanks to the Art Institute of Chicago's API.",
@@ -63,16 +63,6 @@ export const cards: IProjectProp[] = [
     live: "https://searshape-hiwoyn.vercel.app/",
   },
   {
-    id: 3,
-    title: "this.Portfolio",
-    tags: ["ReactJS", "TypeScript", "ThreeJS"],
-    description: "Playing with the React Three Fiber ecosystem and having fun with drei/Html allows to add html in a 3D scene as a mystical computer screen and thus receive all the interactions a website page can have.",
-    image: "/thumbnails/this-portfolio-code.webp",
-    alt: "this.Portfolio",
-    github: "https://github.com/TheoHiwo/portfolio",
-    live: "",
-  },
-  {
     id: 4,
     title: "MmoMouse",
     tags: ["AutoHotKey"],
@@ -80,6 +70,16 @@ export const cards: IProjectProp[] = [
     image: "/thumbnails/mmo-mouse.webp",
     alt: "MmoMouse",
     github: "https://github.com/TheoHiwo/MmoMouseAHK",
+    live: "",
+  },
+  {
+    id: 3,
+    title: "this.Portfolio",
+    tags: ["ReactJS", "TypeScript", "ThreeJS"],
+    description: "Playing with the React Three Fiber ecosystem and having fun with drei/Html allows to add html in a 3D scene as a mystical computer screen and thus receive all the interactions a website page can have.",
+    image: "/thumbnails/this-portfolio-code.webp",
+    alt: "this.Portfolio",
+    github: "https://github.com/TheoHiwo/portfolio",
     live: "",
   },
 ];

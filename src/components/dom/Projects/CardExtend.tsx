@@ -1,6 +1,6 @@
 import { animated, config, useSpring } from "@react-spring/web";
 
-import { FaGithubSquare } from "react-icons/fa";
+import { BsCodeSlash } from "react-icons/bs";
 import { IProjectProp } from "./data";
 import Image from "next/image";
 //todo add link center section on click with href id
@@ -21,18 +21,18 @@ const CardExtend = ({ content, open, from }: { content: IProjectProp; open: bool
         {/*description*/}
         <h1 className="text-lg items-center">{description.toUpperCase()}</h1>
         {/*links*/}
-        <div className="flex justify-between relative">
+        <div className="flex justify-between relative text-clickable border-t-2 border-secondary">
           {/*github*/}
           {github && (
-            <a href={github} target="_blank" className="hover:text-tertiary">
-              <span className="absolute bottom-0 left-0 ">
-                <FaGithubSquare />
+            <a href={github} target="_blank" className="hover:text-clickable/80">
+              <span className="absolute bottom-0 left-0 cursor-help">
+                <BsCodeSlash />
               </span>
             </a>
           )}
           {/*live*/}
           {live && (
-            <a href={live} target="_blank" className="text-4xl hover:text-tertiary">
+            <a href={live} target="_blank" className="text-4xl cursor-help hover:text-clickable/80">
               <span className="absolute bottom-0 right-0 leading-[0.7]">↗ VIEW LIVE</span>
             </a>
           )}

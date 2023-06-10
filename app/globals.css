@@ -16,11 +16,12 @@
     padding: 0;
     overflow: hidden;
     background: #0f0003;
+    font-family: var(--font-pixel);
   }
 }
 
 :root {
-  --secondary: #261108;
+  --secondary: #130603;
 }
 
 .outline-screen * {

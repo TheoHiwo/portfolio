@@ -1,12 +1,21 @@
 import { useCanvasStore } from "@/components/canvas/canvasStore";
 import Card from "./Cards";
 import { cards } from "./data";
+import { Press_Start_2P } from "next/font/google";
+import clsx from "clsx";
+import { arcadeArcade } from "../Home/Home";
+
+// const arcadeArcade = Press_Start_2P({
+//   weight: '400',
+//   subsets: ['latin'],
+//   display: 'swap',
+// });
 
 type Props = {
   scrollToOffset: (offset: number) => void;
 };
 export const HELPER_MESSAGES = {
-  open: "Click on a card to see more ⤢",
+  open: "Click a card to see more ⤢",
   close: "Click again to close ⤾",
 }
 
@@ -20,8 +29,8 @@ export default function Projects({scrollToOffset}: Props) {
         <div className="pixelart-to-css" />
       </div>
       <div className="flex flex-row justify-between mb-5">
-        <h1 className="text-6xl self-center">PROJECTS.code</h1>
-        <h1 className="text-base self-center">{helperMessage.toUpperCase()}</h1>
+        <h1 className="text-5xl self-center"><span className={clsx(arcadeArcade.className, "text-3xl")}>PROJECTS</span>.code</h1>
+        <h1 className="text-base self-center pt-4 opacity-70">{helperMessage.toUpperCase()}</h1>
       </div>
 
       <div className="h-full flex flex-wrap overflow-hidden">

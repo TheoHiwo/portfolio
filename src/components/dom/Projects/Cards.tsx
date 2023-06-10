@@ -6,9 +6,8 @@ import { useGesture } from "@use-gesture/react";
 import { clsx } from "clsx";
 import dynamic from "next/dynamic";
 import { useCanvasStore } from "@/components/canvas/canvasStore";
-// import TagIconCode from "./TagIcons/TagIconCode";
-// import TagIconDesign from "./TagIcons/TagIconDesign";
-// import CardExtend from "./CardExtend";
+import { arcadeArcade } from "../Home/Home";
+
 
 const CardExtend = dynamic(() => import("./CardExtend"), {
   loading: () => <p>Loading...</p>,
@@ -86,9 +85,9 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
         
         ref={refCard}
         className={clsx(
-          !open && "place-content-center text-center order-0",
+          !open && "place-content-center text-center order-0 ",
           open && "h-full w-full order-first",
-          "flex flex-col grow  shrink cursor-pointer bg-primary bg-opacity-10 hover:bg-gray-500/10 outline-3 outline-secondary"
+          "flex flex-col grow  shrink bg-primary bg-opacity-5 hover:bg-gray-500/10 cursor-pointer font-pixel"
         )}
         //@ts-ignore
         {...bind()}
@@ -97,9 +96,12 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
       >
         {/*MAIN PART*/}
         <animated.div style={spring} className={clsx(open && "flex justify-between", !open && "")}>
-          <h1 className="text-4xl tracking-wide">{title}</h1>
+        
+          <h1 className={clsx("text-lg tracking-normal py-2", arcadeArcade.className, !open && "text-clickable hover:text-clickable/80")}>
+            {title}
+            </h1>
           {/*tags*/}
-          <div className={clsx(!open && "place-content-center ", open && "", "text-base gap-x-4 flex opacity-70")}>
+          <div className={clsx(!open && "place-content-center ", open && "", "text-base gap-x-4 flex")}>
             {tags.map((tag) => (
               <div key={tag+from} className={clsx(open && " content-center flex-wrap", "flex flex-row gap-x-2")}>
                 <h1 className="">{tag}</h1>

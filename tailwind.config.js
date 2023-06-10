@@ -22,11 +22,11 @@ module.exports = {
       colors: {
         "primary": "#dfe1d7",
         // "primary": "#CDDD68",
-        "secondary": "#261108",
+        "secondary": "#130603",
         // "secondary": "#17192a",
-        "tertiary": "#FF401B",
+        "clickable": "#ffd7a3",
         
-      }
+      },
     },
   },
   variants: {
