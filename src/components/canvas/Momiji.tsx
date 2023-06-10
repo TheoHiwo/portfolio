@@ -72,7 +72,6 @@ export default function Momiji(props: JSX.IntrinsicElements["group"]) {
 
 
 
-
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh geometry={nodes.root_d.geometry} material={materials.Texture} />
