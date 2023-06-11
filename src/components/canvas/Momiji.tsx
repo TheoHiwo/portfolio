@@ -28,7 +28,7 @@ type GLTFResult = GLTF & {
     Button_Arrow_top: THREE.Mesh;
     Button_FullScreen: THREE.Mesh;
     Mouse: THREE.Mesh;
-    Screen: THREE.Mesh;
+    // Screen: THREE.Mesh;
   };
   materials: {
     Texture: THREE.MeshBasicMaterial;
@@ -79,7 +79,9 @@ export default function Momiji(props: JSX.IntrinsicElements["group"]) {
     <group ref={group} {...props} dispose={null}>
       <mesh geometry={nodes.root_d.geometry} material={materials.Texture} />
       <mesh geometry={nodes.root_d_1.geometry} material={materials.Foliage} />
-      <MomijiScreen geometry={nodes.Screen.geometry} material={materials.Texture} />
+      <MomijiScreen
+      //  geometry={nodes.Screen.geometry} material={materials.Texture} 
+       />
       <MomijiMouse geometry={nodes.Mouse.geometry} material={materials.Texture} />
 
       <mesh
@@ -133,9 +135,9 @@ export default function Momiji(props: JSX.IntrinsicElements["group"]) {
 
         <PerspectiveCamera
           makeDefault
-          position={[-5, 0, positionCameraZ]}
+          position={[2, 0, positionCameraZ]}
           rotation={[0, 0, 0]}
-          fov={25}
+          fov={26}
         />
 
       <OrbitControls

@@ -125,7 +125,7 @@ export const useCanvasStore = create<CanvasState>()((set) => ({
     }))},
   decrementSectionNumber: () =>
     set((state) => ({
-      sectionNumber: state.sectionNumber - 1,
+      sectionNumber: state.sectionNumber - 1 < 1? 1 : state.sectionNumber - 1,
     })),
   cursorText: defaultStates.cursorText,
   setCursorText: (text) => set((state) => ({ cursorText: cursorTextContent[text] })),

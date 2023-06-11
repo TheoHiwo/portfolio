@@ -9,7 +9,9 @@ import { constants, defaultStates, useCanvasStore } from "./canvasStore";
 
 const { RADIUS } = constants;
 
-export default function MomijiScreen({ geometry, material }) {
+export default function MomijiScreen(
+  // { geometry, material }
+  ) {
   // console.log("Screen");
   //store
 
