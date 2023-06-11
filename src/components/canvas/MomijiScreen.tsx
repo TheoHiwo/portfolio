@@ -64,9 +64,9 @@ export default function MomijiScreen({ geometry, material }) {
     onMove: ({ hovering, event }) => {
       moveMousefromScreen(hovering, event)
     },
-    onPointerDown: ({ hovering, event }) => {
-      moveMousefromScreen(hovering, event)
-    },
+    // onPointerDown: ({ hovering, event }) => {
+    //   moveMousefromScreen(hovering, event)
+    // },
     
     // onDoubleClick: ({ event}) => {
     //   setIsFullScreen(!isFullScreen);
