@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: any }) => {
           overflow: "auto",
           touchAction: "auto",
         }}
-        className="touch-pan-x"
+        // className="touch-pan-x"
       >
         {/* app dir */}
         {children}
