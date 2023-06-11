@@ -39,7 +39,7 @@ export default function Contact({}: Props) {
             <h1 className={clsx("text-4xl self-center", arcadeArcade.className)} {...springContact}>
               CONTACT ME
             </h1>
-            <h1 className="text-4xl">rara21400@gmail.com</h1>
+            <h1 className="text-3xl">contact@theo-berraboukh.com</h1>
           </div>
         </a>
         <div className="h-20 w-20">
