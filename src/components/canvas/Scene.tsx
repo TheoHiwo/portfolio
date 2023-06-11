@@ -35,7 +35,7 @@ export const LoadingScreen = ({ started, onStarted }) => {
     }
   }, [progress]);
   return (
-    <div className={clsx(started && "hidden", !started && "block", "text-6xl text-red-500 fixed top-0 right-0 z-[100]")}>
+    <div className={clsx(started && "hidden", !started && "block", "text-6xl text-red-500 fixed top-0 right-0 z-[100] ")}>
       <div className="">{progress} % loaded</div>
     </div>
   );
