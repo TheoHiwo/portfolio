@@ -22,13 +22,15 @@ export default function Contact({}: Props) {
     setHovered(hovering);
   });
 
+  const email = "contact@theo-berraboukh.com"
+
   return (
     <div className=" h-[700px] text-primary bg-secondary ">
       <div className="flex justify-between align-center pt-10 px-10">
         <div className="h-20 w-20">
           <EyeTrack />
         </div>
-        <a href="mailto:rara21400@gmail.com">
+        <a href={`mailto:${email}`}>
           <div
             //@ts-ignore
             {...bind()}
@@ -39,7 +41,7 @@ export default function Contact({}: Props) {
             <h1 className={clsx("text-4xl self-center", arcadeArcade.className)} {...springContact}>
               CONTACT ME
             </h1>
-            <h1 className="text-3xl">contact@theo-berraboukh.com</h1>
+            <h1 className="text-3xl">{email}</h1>
           </div>
         </a>
         <div className="h-20 w-20">
