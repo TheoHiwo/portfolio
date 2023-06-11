@@ -47,10 +47,11 @@ export default function Scene({ ...props }) {
     <>
       <Canvas {...props}>
         {/* <Debug /> */}
-        <Suspense fallback={null}>{start && <Momiji />}</Suspense>
+        {/* <Suspense fallback={null}>{start && <Momiji />}</Suspense> */}
+        <Momiji />
       </Canvas>
-      {/* <Loader /> */}
-      <LoadingScreen started={start} onStarted={() => setStart(true)} />
+      <Loader />
+      {/* <LoadingScreen started={start} onStarted={() => setStart(true)} /> */}
     </>
   );
 }
