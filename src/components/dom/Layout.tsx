@@ -22,7 +22,7 @@ const Layout = ({ children }: { children: any }) => {
           width: " 100%",
           height: "100%",
           overflow: "auto",
-          // touchAction: "auto",
+          touchAction: "auto",
         }}
         // className="touch-pan-x"
       >
