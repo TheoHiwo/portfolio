@@ -78,7 +78,7 @@ export default function MomijiScreen({ geometry, material }) {
       {...bind()}
       as="div"
       zIndexRange={[49, 0]} 
-      className="content"
+      className="content "
       position={[-0.76, 5.2, 2.2]}
       rotation={[-0.31, 0.15, -0.11]}
       occlude="blending"
