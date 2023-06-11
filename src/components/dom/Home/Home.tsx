@@ -18,6 +18,7 @@ type Props = {};
 export default function Home({}: Props) {
   const cursorText = useCanvasStore((state) => state.cursorText);
   const setCursorText = useCanvasStore((state) => state.setCursorText);
+  // const setCursorTextVisible = useCanvasStore((state) => state.setCursorTextVisible);
   return (
     <div
       //@ts-ignore

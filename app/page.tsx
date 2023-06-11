@@ -40,6 +40,8 @@ export default function Single() {
   const progressScreen = useCanvasStore((state) => state.progressScreen);
   const setProgressScreen = useCanvasStore((state) => state.setProgressScreen);
   const sectionNumber = useCanvasStore((state) => state.sectionNumber);
+  
+  const setCursorTextVisible = useCanvasStore((state) => state.setCursorTextVisible);
   const parallax = useRef<IParallax>(null!);
   
   const scrollToOffset = (offset: number) => {
@@ -73,14 +75,15 @@ export default function Single() {
         <div
           // @ts-ignore
           // {...bind()}
-          className="z-0 h-full flex-col text-3xl justify-center items-center text-secondary bg-primary touch-pan-y "
+          className="main-content z-0 h-full flex-col text-3xl justify-center items-center text-secondary bg-primary touch-pan-y "
         >
           <Parallax pages={NUM_PAGES} ref={parallax} className="">
-            <ParallaxLayer offset={0} speed={0} style={LAYER} className="">
+            <ParallaxLayer offset={0} speed={0} style={LAYER} className="" onPointerDown={() => setCursorTextVisible(true)}>
               <Home />
             </ParallaxLayer>
 
-            <ParallaxLayer  offset={1} speed={0.75} style={{ ...LAYER, marginBottom: "20px" }}>
+            <ParallaxLayer  offset={1} speed={0.75} style={{ ...LAYER, marginBottom: "20px" }}
+            onPointerDown={() => setCursorTextVisible(false)}>
               <Projects scrollToOffset={scrollToOffset} />
 
               <ProjectsDesign scrollToOffset={scrollToOffset} />

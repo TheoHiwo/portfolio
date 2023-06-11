@@ -30,11 +30,11 @@ export default function Contact({}: Props) {
         <div className="h-20 w-20">
           <EyeTrack />
         </div>
-        <a href={`mailto:${email}`}>
+        <a href={`mailto:${email}`} draggable="false">
           <div
             //@ts-ignore
             {...bind()}
-            className="flex flex-col justify-between items-center text-clickable hover:text-hovered  py-4 px-5"
+            className="flex flex-col justify-between items-center text-clickable hover:text-hovered  py-4 px-5 "
             onMouseEnter={() => setIsLeafHovered(true)}
             onMouseLeave={() => setIsLeafHovered(false)}
           >

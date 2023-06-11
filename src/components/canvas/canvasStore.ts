@@ -13,6 +13,7 @@ export const defaultStates = {
   isSceneDragged: false,
   sectionNumber: 0,
   cursorText: "",
+  cursorTextVisible: false,
   isCanvasHovered: false,
   isFullScreen: false,
   isScreenHovered: false,
@@ -42,6 +43,8 @@ interface CanvasState {
   setSectionNumber: (offset: number) => void;
   cursorText: string;
   setCursorText: (text: "onLeaf" | "onScreen" | "onProjectsCards" | "onProjectsCardOpen" | "outside" | "") => void;
+  cursorTextVisible: boolean;
+  setCursorTextVisible: (isVisible: boolean) => void;
 
   //canvas states
   isCanvasHovered: boolean;
@@ -115,7 +118,9 @@ export const useCanvasStore = create<CanvasState>()((set) => ({
     })),
   cursorText: defaultStates.cursorText,
   setCursorText: (text) => set((state) => ({ cursorText: cursorTextContent[text] })),
-
+  cursorTextVisible: defaultStates.cursorTextVisible,
+  setCursorTextVisible: (isVisible) => set((state) => ({ cursorTextVisible: isVisible })),
+  
   //CANVAS states
   isCanvasHovered: defaultStates.isCanvasHovered,
   setIsCanvasHovered: (isHovered) => set((state) => ({ isCanvasHovered: isHovered })),

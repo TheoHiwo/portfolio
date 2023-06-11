@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useCanvasStore } from "../canvas/canvasStore";
+import clsx from "clsx";
 
 export const cursorTextContent = {
   outside: "←Drag→ ",
@@ -20,6 +21,7 @@ export const Cursor = () => {
   const cursorOutline = useRef(null);
   const [hoverButton, setHoverButton] = useState(false);
   const cursorText = useCanvasStore((state) => state.cursorText);
+  const cursorTextVisible = useCanvasStore((state) => state.cursorTextVisible);
 
   const animate = () => {
     let distX = mouseX - outlineX;
@@ -69,11 +71,15 @@ export const Cursor = () => {
       document.removeEventListener("mouseover", mouseEventListener);
     };
   }, []);
-
+  // cursorTextVisible
   return (
     <>
       <div
-        className={`z-[60] fixed -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-transform mix-blend-difference text-white text-2xl font-pixel`}
+        className={clsx(
+          `z-[60] fixed -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-transform mix-blend-difference text-white text-2xl font-pixel`,
+          cursorTextVisible && "opacity-100",
+          !cursorTextVisible && "opacity-0"
+        )}
         ref={cursorOutline}
       >
         <div>

@@ -20,6 +20,19 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 0.4em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: #151212;
+  outline: 1px solid rgb(0, 0, 0);
+}
+
 :root {
   --secondary: #151212;
 }
@@ -63,6 +76,7 @@
   height: 100%;
   width: 100%;
 }
+
 
 .pixelart-to-css {
   position: absolute;

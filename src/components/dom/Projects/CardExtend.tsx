@@ -25,7 +25,7 @@ const CardExtend = ({ content, open, from }: { content: IProjectProp; open: bool
         <div className="flex justify-between relative text-clickable border-t-2 border-secondary">
           {/*github*/}
           {github && (
-            <a href={github} target="_blank" className="hover:text-hovered ">
+            <a href={github} target="_blank" className="hover:text-hovered " draggable="false">
               <span className="absolute bottom-0 left-0 cursor-help">
                 <BsCodeSlash />
               </span>
@@ -33,7 +33,7 @@ const CardExtend = ({ content, open, from }: { content: IProjectProp; open: bool
           )}
           {/*live*/}
           {live && (
-            <a href={live} target="_blank" className="text-4xl cursor-help hover:text-hovered ">
+            <a href={live} target="_blank" className="text-4xl cursor-help hover:text-hovered " draggable="false">
               <span className="absolute bottom-0 right-0 leading-[0.7]">↗ VIEW LIVE</span>
             </a>
           )}
