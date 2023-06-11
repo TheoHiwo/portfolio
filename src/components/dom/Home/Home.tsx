@@ -18,14 +18,18 @@ type Props = {};
 export default function Home({}: Props) {
   const cursorText = useCanvasStore((state) => state.cursorText);
   const setCursorText = useCanvasStore((state) => state.setCursorText);
-  // const setCursorTextVisible = useCanvasStore((state) => state.setCursorTextVisible);
+  const setCursorTextVisible = useCanvasStore((state) => state.setCursorTextVisible);
   return (
     <div
       //@ts-ignore
       // {...bind()}
       className="h-full w-full flex flex-col justify-between items-center px-10 text-secondary bg-primary overflow-hidden"
-      onMouseMove={() => {if (cursorText !== cursorTextContent.onLeaf) setCursorText("onScreen")}}
+      onMouseMove={() => {
+        if (cursorText !== cursorTextContent.onLeaf) setCursorText("onScreen")
+        setCursorTextVisible(true)
+      }}
       onMouseLeave={() => setCursorText("")}
+      onPointerDown={() => setCursorTextVisible(true)}
     >
       <div className="w-full text-base tracking-wide px-1 text-center">
         momiji connected successfully in 1301.96years (8 branches)

@@ -32,7 +32,8 @@ export default function About({}: Props) {
           <p>{data.p2.toUpperCase()}</p>
           <p>{data.p3.toUpperCase()}</p>
           <p>{data.p4.toUpperCase()}</p>
-          <p className="text-center text-xl">{data.p5.toUpperCase()}</p>
+          <p>{data.p5.toUpperCase()}</p>
+          <p className="text-center text-xl text-de">{data.p6.toUpperCase()}</p>
         </div>
       </section>
     </>

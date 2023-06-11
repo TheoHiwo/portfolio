@@ -79,13 +79,13 @@ export default function Single() {
         >
           <Parallax pages={NUM_PAGES} ref={parallax} className="">
             <ParallaxLayer offset={0} speed={0} style={LAYER} className="" 
-            // onPointerDown={() => setCursorTextVisible(true)}
+            onPointerDown={() => setCursorTextVisible(true)}
             >
               <Home />
             </ParallaxLayer>
 
             <ParallaxLayer  offset={1} speed={0.75} style={{ ...LAYER, marginBottom: "20px" }}
-            // onPointerDown={() => setCursorTextVisible(false)}
+            onPointerDown={() => setCursorTextVisible(false)}
             >
               <Projects scrollToOffset={scrollToOffset} />
 
