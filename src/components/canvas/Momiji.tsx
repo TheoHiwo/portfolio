@@ -48,6 +48,9 @@ export default function Momiji(props: JSX.IntrinsicElements["group"]) {
   const isMouseGrabbed = useCanvasStore((state) => state.isMouseGrabbed);
   const isFullScreen = useCanvasStore((state) => state.isFullScreen);
   const isRotatable = !isMouseGrabbed && !isFullScreen;
+  const setSectionNumber = useCanvasStore((state) => state.setSectionNumber);
+  const incrementSectionNumber = useCanvasStore((state) => state.incrementSectionNumber);
+  const decrementSectionNumber = useCanvasStore((state) => state.decrementSectionNumber);
 
 
   let positionCameraZ = 40
@@ -84,13 +87,48 @@ export default function Momiji(props: JSX.IntrinsicElements["group"]) {
         material={materials.Texture}
         position={[-3.79, 0.32, 8.92]}
         rotation={[2.94, -1.32, 2.82]}
-        // onPointerMove={handleKeyPointerOver}
+        onPointerMove={handleKeyPointerOver}
+        onPointerLeave={() => {document.body.style.cursor = "auto"}}
+        onClick={() => {setSectionNumber(0)}}
+        
       >
-        <mesh geometry={nodes.Button_Arrow_bottom.geometry} material={materials.Texture} />
-        <mesh geometry={nodes.Button_Arrow_left.geometry} material={materials.Texture} />
-        <mesh geometry={nodes.Button_Arrow_right.geometry} material={materials.Texture} />
-        <mesh geometry={nodes.Button_Arrow_top.geometry} material={materials.Texture} />
-        <mesh geometry={nodes.Button_FullScreen.geometry} material={materials.Texture} />
+        <mesh geometry={nodes.Button_Arrow_bottom.geometry} material={materials.Texture} 
+        onPointerMove={handleKeyPointerOver}
+        onPointerLeave={(e) => {
+          e.stopPropagation()
+          document.body.style.cursor = "auto"
+        }}
+        onClick={(e) => {
+          e.stopPropagation()
+          incrementSectionNumber()
+        }}
+        />
+        <mesh geometry={nodes.Button_Arrow_left.geometry} material={materials.Texture}  
+        onPointerMove={(e) => {e.stopPropagation()}}
+        onPointerLeave={(e) => {e.stopPropagation()}}
+        onClick={(e) => {e.stopPropagation()}}
+        />
+        <mesh geometry={nodes.Button_Arrow_right.geometry} material={materials.Texture}  
+        onPointerMove={(e) => {e.stopPropagation()}}
+        onPointerLeave={(e) => {e.stopPropagation()}}
+        onClick={(e) => {e.stopPropagation()}}
+        />
+        <mesh geometry={nodes.Button_Arrow_top.geometry} material={materials.Texture}  
+        onPointerMove={handleKeyPointerOver}
+        onPointerLeave={(e) => {
+          e.stopPropagation()
+          document.body.style.cursor = "auto"
+        }}
+        onClick={(e) => {
+          e.stopPropagation()
+          decrementSectionNumber()
+        }}
+        />
+        <mesh geometry={nodes.Button_FullScreen.geometry} material={materials.Texture}  
+        onPointerMove={(e) => {e.stopPropagation()}}
+        onPointerLeave={(e) => {e.stopPropagation()}}
+        onClick={(e) => {e.stopPropagation()}}
+        />
       </mesh>
 
         <PerspectiveCamera
@@ -126,6 +164,14 @@ gltf-transform webp momiji.glb momiji.glb
  */
 
 function handleKeyPointerOver(e) {
-  e.stopPropagation();
+//   if( e.target !== e.currentTarget ) {
+//     return;
+// }
+  // e.stopPropagation();
   document.body.style.cursor = "pointer";
 }
+
+// function handleDisablePointerOver(e) {
+//   e.stopPropagation();
+//   document.body.style.cursor = "disable";
+// }

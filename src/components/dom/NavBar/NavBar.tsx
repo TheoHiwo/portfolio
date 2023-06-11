@@ -18,6 +18,7 @@ export default function NavBar({}: Props) {
     // text-underline-offset: 1px;
     // textUnderlineOffset: hovered ? "1px" : "0px",
     // fontSize: hovered ? "10px" : "20px",
+    // y: open? 0 : -20,
     config: { mass: 2, tension: 600, friction: 120 },
   }));
 

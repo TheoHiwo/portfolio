@@ -11,7 +11,7 @@ export const constants: Constants = {
 
 export const defaultStates = {
   isSceneDragged: false,
-  sectionNumber: 0,
+  sectionNumber: 1,
   cursorText: "",
   cursorTextVisible: false,
   isCanvasHovered: false,
@@ -41,6 +41,8 @@ interface CanvasState {
   setIsSceneDragged: (isDragged: boolean) => void;
   sectionNumber: number
   setSectionNumber: (offset: number) => void;
+  incrementSectionNumber: () => void;
+  decrementSectionNumber: () => void;
   cursorText: string;
   setCursorText: (text: "onLeaf" | "onScreen" | "onProjectsCards" | "onProjectsCardOpen" | "outside" | "") => void;
   cursorTextVisible: boolean;
@@ -115,6 +117,15 @@ export const useCanvasStore = create<CanvasState>()((set) => ({
     set((state) => ({
       //prevent a bug where no rerender occurred because identical value, so add a small value, floor the value by the consumer
       sectionNumber: sectionN+1 === state.sectionNumber ? sectionN+1+0.001 : sectionN+1,
+    })),
+  incrementSectionNumber: () =>{
+    
+    set((state) => ({
+      sectionNumber: state.sectionNumber + 1 > 4? 1 : state.sectionNumber + 1,
+    }))},
+  decrementSectionNumber: () =>
+    set((state) => ({
+      sectionNumber: state.sectionNumber - 1,
     })),
   cursorText: defaultStates.cursorText,
   setCursorText: (text) => set((state) => ({ cursorText: cursorTextContent[text] })),
