@@ -13,12 +13,18 @@ export default function EyeTrack() {
     autoplay: true,
     stateMachines: STATE_MACHINE,
   });
+  // const [isLeafHovered, setIsLeafHovered] = useState(false);
+
   const mouseGrabbedInput = useStateMachineInput(rive, STATE_MACHINE, "mouseGrabbed");
+  const setCursorText = useCanvasStore((state) => state.setCursorText);
+  const isLeafHovered = useCanvasStore((state) => state.isLeafHovered);
+  const setIsLeafHovered = useCanvasStore((state) => state.setIsLeafHovered);
 
   const isMouseGrabbed = useCanvasStore((state) => state.isMouseGrabbed);
 
+
   if (mouseGrabbedInput) {
-    mouseGrabbedInput.value = isMouseGrabbed;
+    mouseGrabbedInput.value = isMouseGrabbed || isLeafHovered;
   }
 
   const [maxWidth, setMaxWidth] = useState<any>(null);
@@ -50,5 +56,17 @@ export default function EyeTrack() {
     };
   }, [xAxisInput, yAxisInput, maxHeight, maxWidth]);
 
-  return <RiveComponent />;
+  const handleMouseEnter = () => {
+    setCursorText("onLeaf")
+    setIsLeafHovered(true)
+  }
+  const handleMouseLeave = () => {
+    setCursorText("")
+    setIsLeafHovered(false)
+  }
+
+  return <RiveComponent
+   onMouseEnter={handleMouseEnter} 
+   onMouseLeave={handleMouseLeave} 
+   />;
 }

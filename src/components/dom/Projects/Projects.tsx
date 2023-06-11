@@ -17,25 +17,35 @@ type Props = {
 export const HELPER_MESSAGES = {
   open: "Click a card to see more ⤢",
   close: "Click again to close ⤾",
-}
+};
 
-export default function Projects({scrollToOffset}: Props) {
+export default function Projects({ scrollToOffset }: Props) {
   const isOpenCode = useCanvasStore((state) => state.isOpenCode);
-  const helperMessage =  isOpenCode ? HELPER_MESSAGES.close : HELPER_MESSAGES.open;
+  const setCursorText = useCanvasStore((state) => state.setCursorText);
+  const helperMessage = isOpenCode ? HELPER_MESSAGES.close : HELPER_MESSAGES.open;
 
+  const handleHover = () => {
+    setCursorText("onProjectsCards");
+  };
   return (
-    <section className="h-full w-full flex flex-col justify-between px-10 py-10 text-primary bg-secondary relative" id="project">
+    <section
+      className="h-full w-full flex flex-col justify-between px-10 py-10 text-primary bg-secondary relative"
+      id="onProjectsCards"
+      // onMouseEnter={handleHover}
+    >
       <div className="w-[673px] h-[336px] absolute z-10 left-0 bottom-full ">
         <div className="pixelart-to-css" />
       </div>
       <div className="flex flex-row justify-between mb-5">
-        <h1 className="text-5xl self-center"><span className={clsx(arcadeArcade.className, "text-3xl")}>PROJECTS</span>.code</h1>
+        <h1 className="text-5xl self-center">
+          <span className={clsx(arcadeArcade.className, "text-3xl")}>PROJECTS</span>.code
+        </h1>
         <h1 className="text-base self-center pt-4 opacity-70">{helperMessage.toUpperCase()}</h1>
       </div>
 
       <div className="h-full flex flex-wrap overflow-hidden">
         {cards.map((card) => (
-          <Card key={card.id} content={card} from="code" scrollToOffset={scrollToOffset}/>
+          <Card key={card.id} content={card} from="code" scrollToOffset={scrollToOffset} />
         ))}
       </div>
     </section>

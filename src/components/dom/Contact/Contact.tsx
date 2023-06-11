@@ -4,11 +4,14 @@ import { animated, config, useSpring } from "@react-spring/web";
 import { useGesture, useHover, useScroll } from "@use-gesture/react";
 import clsx from "clsx";
 import { arcadeArcade } from "../Home/Home";
+import { useCanvasStore } from "@/components/canvas/canvasStore";
 
 type Props = {};
 
+
 export default function Contact({}: Props) {
   const [hovered, setHovered] = useState(false);
+  const setIsLeafHovered = useCanvasStore((state) => state.setIsLeafHovered);
 
   const [springContact, apiContact] = useSpring(() => ({
     config: config.slow,
@@ -29,7 +32,9 @@ export default function Contact({}: Props) {
           <div
             //@ts-ignore
             {...bind()}
-            className="flex flex-col justify-between items-center text-clickable hover:text-clickable/80 py-4 px-5"
+            className="flex flex-col justify-between items-center text-clickable hover:text-hovered  py-4 px-5"
+            onMouseEnter={() => setIsLeafHovered(true)}
+            onMouseLeave={() => setIsLeafHovered(false)}
           >
             <h1 className={clsx("text-4xl self-center", arcadeArcade.className)} {...springContact}>
               CONTACT ME

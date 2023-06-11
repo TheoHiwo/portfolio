@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { cursorTextContent } from "../dom/Cursor";
 
 interface Constants {
   RADIUS: number;
@@ -11,6 +12,7 @@ export const constants: Constants = {
 export const defaultStates = {
   isSceneDragged: false,
   sectionNumber: 0,
+  cursorText: "",
   isCanvasHovered: false,
   isFullScreen: false,
   isScreenHovered: false,
@@ -29,6 +31,7 @@ export const defaultStates = {
   isScreenScrollable: false, //fire when Occluded
   isScrollingUp: false,
   isScrollingDown: false,
+  isLeafHovered: false,
 };
 
 interface CanvasState {
@@ -37,6 +40,8 @@ interface CanvasState {
   setIsSceneDragged: (isDragged: boolean) => void;
   sectionNumber: number
   setSectionNumber: (offset: number) => void;
+  cursorText: string;
+  setCursorText: (text: "onLeaf" | "onScreen" | "onProjectsCards" | "onProjectsCardOpen" | "outside" | "") => void;
 
   //canvas states
   isCanvasHovered: boolean;
@@ -92,6 +97,10 @@ interface CanvasState {
   setIsScrollingUp: (isScrollUp: boolean) => void;
   isScrollingDown: boolean;
   setIsScrollingDown: (isScrollDown: boolean) => void;
+
+  //RIVE states
+  isLeafHovered: boolean;
+  setIsLeafHovered: (isHovered: boolean) => void;
 }
 
 export const useCanvasStore = create<CanvasState>()((set) => ({
@@ -104,6 +113,8 @@ export const useCanvasStore = create<CanvasState>()((set) => ({
       //prevent a bug where no rerender occurred because identical value, so add a small value, floor the value by the consumer
       sectionNumber: sectionN+1 === state.sectionNumber ? sectionN+1+0.001 : sectionN+1,
     })),
+  cursorText: defaultStates.cursorText,
+  setCursorText: (text) => set((state) => ({ cursorText: cursorTextContent[text] })),
 
   //CANVAS states
   isCanvasHovered: defaultStates.isCanvasHovered,
@@ -175,4 +186,8 @@ export const useCanvasStore = create<CanvasState>()((set) => ({
 
   isScrollingDown: defaultStates.isScrollingDown,
   setIsScrollingDown: (isScrollDown: boolean) => set((state) => ({ isScrollingDown: isScrollDown })),
+
+  //RIVE states
+  isLeafHovered: defaultStates.isLeafHovered,
+  setIsLeafHovered: (isHovered) => set((state) => ({ isLeafHovered: isHovered })),
 }));

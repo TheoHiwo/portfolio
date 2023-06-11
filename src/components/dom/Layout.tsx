@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useThree } from "@react-three/fiber";
 import NavBar from "./NavBar/NavBar";
+import { Cursor } from "./Cursor";
 
 const Scene = dynamic(() => import("@/components/canvas/Scene"), { ssr: false });
 
@@ -13,6 +14,7 @@ const Layout = ({ children }: { children: any }) => {
   return (
     <>
       <NavBar/>
+      <Cursor/>
       <div
         ref={parentRef}
         style={{
@@ -24,12 +26,10 @@ const Layout = ({ children }: { children: any }) => {
         }}
       >
         {/* app dir */}
-        {/* <div style={{ position: "fixed", top: 0, left: 0, userSelect: "none" }}> */}
         {children}
-        {/* </div> */}
         <Scene
           style={{
-            zIndex: "48",
+            zIndex: "28",
             width: "100%",
             height: "100%",
             pointerEvents: "none",

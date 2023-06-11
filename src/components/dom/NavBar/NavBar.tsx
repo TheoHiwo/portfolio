@@ -56,6 +56,7 @@ export default function NavBar({}: Props) {
 
   const handleClick = (e, button) => {
     setSectionNumber(button);
+    setOpen(false);
   };
   const handleHamburgerClick = (e) => {
     setOpen(!open);
@@ -66,7 +67,7 @@ export default function NavBar({}: Props) {
       <button
         className=" fixed top-0 left-0 flex items-center text-white p-3"
         onClick={handleHamburgerClick}
-        style={{ zIndex: 9999 }}
+        style={{ zIndex: 51 }}
       >
         <svg className="block h-4 w-4 lg:h-8 lg:w-8 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <title>Mobile menu</title>
@@ -77,7 +78,7 @@ export default function NavBar({}: Props) {
       {/*menu*/}
       <animated.div
         className={clsx("fixed top-0 left-0 text-primary h-[100vh] w-[50vw] lg:w-[30vw] bg-[#0F0003] lg:text-7xl", open ? "block" : "hidden")}
-        style={{ zIndex: 9998, ...springNav}}
+        style={{ zIndex: 50, ...springNav}}
       >
         <div className="flex flex-col pt-8 lg:pt-8 justify-evenly content-center h-full w-full">
         {trail.map(({ ...style }, index) => (

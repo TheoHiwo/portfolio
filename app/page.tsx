@@ -7,27 +7,29 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useGesture, useScroll } from "@use-gesture/react";
 import { useCanvasStore } from "@/components/canvas/canvasStore";
 
-// import Home from "@/components/dom/Home/Home";
-// import Projects from "@/components/dom/Projects/Projects";
-// import ProjectsDesign from "@/components/dom/Projects/ProjectsDesign";
+import Home from "@/components/dom/Home/Home";
+import Projects from "@/components/dom/Projects/Projects";
+import ProjectsDesign from "@/components/dom/Projects/ProjectsDesign";
+import About from "@/components/dom/About/About";
+import Contact from "@/components/dom/Contact/Contact";
 
-const Home = dynamic(() => import("@/components/dom/Home/Home"), {
-  loading: () => <p>Loading...</p>,
-});
-const Projects = dynamic(() => import("@/components/dom/Projects/Projects"), {
-  loading: () => <p>Loading...</p>,
-});
-const ProjectsDesign = dynamic(() => import("@/components/dom/Projects/ProjectsDesign"), {
-  loading: () => <p>Loading...</p>,
-});
+// const Home = dynamic(() => import("@/components/dom/Home/Home"), {
+//   loading: () => <p>Loading...</p>,
+// });
+// const Projects = dynamic(() => import("@/components/dom/Projects/Projects"), {
+//   loading: () => <p>Loading...</p>,
+// });
+// const ProjectsDesign = dynamic(() => import("@/components/dom/Projects/ProjectsDesign"), {
+//   loading: () => <p>Loading...</p>,
+// });
 
-const About = dynamic(() => import("@/components/dom/About/About"), {
-  loading: () => <p>Loading...</p>,
-});
+// const About = dynamic(() => import("@/components/dom/About/About"), {
+//   loading: () => <p>Loading...</p>,
+// });
 
-const Contact = dynamic(() => import("@/components/dom/Contact/Contact"), {
-  loading: () => <p>Loading...</p>,
-});
+// const Contact = dynamic(() => import("@/components/dom/Contact/Contact"), {
+//   loading: () => <p>Loading...</p>,
+// });
 
 const NUM_PAGES = 4;
 //h-full/NUM_PAGES = height of a parallax layer in % = 457px

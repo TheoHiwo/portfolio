@@ -66,7 +66,7 @@ export default function Momiji(props: JSX.IntrinsicElements["group"]) {
     }
   }
   
-  var mobileBreakpoint = window.matchMedia("(max-width: 700px)")
+  const mobileBreakpoint = window.matchMedia("(max-width: 700px)")
   cameraMediaQuery(mobileBreakpoint) // Call listener function at run time
   mobileBreakpoint.addEventListener("change", cameraMediaQuery); // Attach listener function on state changes
 

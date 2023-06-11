@@ -32,6 +32,7 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
   const { id, title, tags } = content;
   const setIsOpenCode = useCanvasStore((state) => state.setIsOpenCode);
   const setIsOpenDesign = useCanvasStore((state) => state.setIsOpenDesign);
+  const setCursorText = useCanvasStore((state) => state.setCursorText);
   const basisCol = from === "code" ? "33.3333%" : "50%";
   const [open, toggle] = useState(false);
   const [wasDragging, setWasDragging] = useState(false);
@@ -87,8 +88,9 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
         className={clsx(
           !open && "place-content-center text-center order-0 ",
           open && "h-full w-full order-first",
-          "flex flex-col grow  shrink bg-primary bg-opacity-5 hover:bg-gray-500/10 cursor-pointer font-pixel"
+          "flex flex-col grow  shrink bg-primary bg-opacity-5 hover:bg-gray-400/10 cursor-pointer font-pixel"
         )}
+        // onMouseEnter={() => {if (open) setCursorText("onProjectsCardOpen")}}
         //@ts-ignore
         {...bind()}
         style={widthWrapper}
@@ -97,7 +99,7 @@ const Card = ({ content, from, scrollToOffset }: Props) => {
         {/*MAIN PART*/}
         <animated.div style={spring} className={clsx(open && "flex justify-between", !open && "")}>
         
-          <h1 className={clsx("text-lg tracking-normal py-2", arcadeArcade.className, !open && "text-clickable hover:text-clickable/80")}>
+          <h1 className={clsx("text-lg tracking-normal py-2", arcadeArcade.className, !open && "text-clickable")}>
             {title}
             </h1>
           {/*tags*/}

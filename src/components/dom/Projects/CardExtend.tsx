@@ -3,6 +3,7 @@ import { animated, config, useSpring } from "@react-spring/web";
 import { BsCodeSlash } from "react-icons/bs";
 import { IProjectProp } from "./data";
 import Image from "next/image";
+
 //todo add link center section on click with href id
 
 const CardExtend = ({ content, open, from }: { content: IProjectProp; open: boolean; from: "code" | "design" }) => {
@@ -24,7 +25,7 @@ const CardExtend = ({ content, open, from }: { content: IProjectProp; open: bool
         <div className="flex justify-between relative text-clickable border-t-2 border-secondary">
           {/*github*/}
           {github && (
-            <a href={github} target="_blank" className="hover:text-clickable/80">
+            <a href={github} target="_blank" className="hover:text-hovered ">
               <span className="absolute bottom-0 left-0 cursor-help">
                 <BsCodeSlash />
               </span>
@@ -32,7 +33,7 @@ const CardExtend = ({ content, open, from }: { content: IProjectProp; open: bool
           )}
           {/*live*/}
           {live && (
-            <a href={live} target="_blank" className="text-4xl cursor-help hover:text-clickable/80">
+            <a href={live} target="_blank" className="text-4xl cursor-help hover:text-hovered ">
               <span className="absolute bottom-0 right-0 leading-[0.7]">↗ VIEW LIVE</span>
             </a>
           )}
