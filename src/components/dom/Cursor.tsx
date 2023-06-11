@@ -82,7 +82,7 @@ export const Cursor = () => {
         )}
         ref={cursorOutline}
       >
-        <div>
+        <div className="text-center">
           {cursorText === cursorTextContent.onScreen && <div>{cursorTextContent.outside}</div>}
           <div>{cursorText}</div>
         </div>
