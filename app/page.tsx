@@ -103,7 +103,6 @@ export default function Single() {
 
 function sectionNumberToOffset(sectionNumber) {
   const floored = Math.floor(sectionNumber);
-  console.log('🔳 , floored:', floored)
   switch (floored) {
     case 1:
       return 0;   
