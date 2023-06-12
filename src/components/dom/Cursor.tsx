@@ -45,7 +45,7 @@ export const Cursor = () => {
       document.removeEventListener("mousemove", mouseEventsListener);
       cancelAnimationFrame(animateEvent);
     };
-  }, []);
+  }, []);z
 
   useEffect(() => {
     const mouseEventListener = document.addEventListener("mouseover", function (e) {
