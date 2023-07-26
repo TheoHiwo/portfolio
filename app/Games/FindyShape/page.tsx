@@ -83,7 +83,7 @@ export default function FindyShape() {
           <p>
             I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and
             information (through third-party products) on your phone called Log Data. This Log Data may include
-            information such as your device Internet Protocol ("IP") address, device name, operating system version, the
+            information such as your device Internet Protocol (&quot;IP&quot;) address, device name, operating system version, the
             configuration of the app when utilizing my Service, the time and date of your use of the Service, and other
             statistics.
           </p>{" "}
@@ -95,8 +95,8 @@ export default function FindyShape() {
             are sent to your browser from the websites that you visit and are stored on your device's internal memory.
           </p>{" "}
           <p>
-            This Service does not use these "cookies" explicitly. However, the app may use third-party code and
-            libraries that use "cookies" to collect information and improve their services. You have the option to
+            This Service does not use these &quot;cookies&quot; explicitly. However, the app may use third-party code and
+            libraries that use &quot;cookies&quot; to collect information and improve their services. You have the option to
             either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to
             refuse our cookies, you may not be able to use some portions of this Service.
           </p>{" "}
