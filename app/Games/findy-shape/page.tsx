@@ -8,7 +8,7 @@ import clsx from "clsx";
 export default function FindyShape() {
   return (
     <toScreen.In>
-      <main className="z-0 flex-col py-12 px-5  w-full justify-center items-center text-secondary bg-primary touch-pan-y  m-auto">
+      <main className="main-content z-0 flex-col py-12 px-5  w-full justify-center items-center text-secondary bg-primary touch-pan-y m-auto">
         <h1 className={clsx("text-5xl pb-5 items-center text-center tracking-widest", arcadeArcade.className)}>
           Findy Shape
         </h1>
