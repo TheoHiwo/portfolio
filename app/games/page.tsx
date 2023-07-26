@@ -14,8 +14,9 @@ const games: IGames[] = [{ id: 1, name: "Findy Shape", platform: "Mobile", urlSu
 
 export default function Games() {
   return (
+    <>
     <toScreen.In>
-      <main>
+      <div>
         <h1 className="text-4xl">Theo&apos;s Games</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {games.map((game) => (
@@ -26,7 +27,8 @@ export default function Games() {
             </div>
           ))}
         </div>
-      </main>
+      </div>
     </toScreen.In>
+    </>
   );
 }
