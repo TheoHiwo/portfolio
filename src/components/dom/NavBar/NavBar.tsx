@@ -109,6 +109,7 @@ export default function NavBar({}: Props) {
             </animated.div>
           ))}
         </div>
+        <div>Links</div>
       </animated.div>
     </menu>
   );
