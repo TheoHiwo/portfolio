@@ -15,6 +15,7 @@ export type Tags =
   | "Affinity Designer"
   | "Unity"
   | "Blender"
+  | "C#"
   | "Rive";
 
 export interface IProjectProp {
@@ -53,14 +54,16 @@ export const cards: IProjectProp[] = [
   },
   {
     id: 2,
-    title: "SearShape",
-    tags: ["BabylonJS", "TypeScript"],
+    title: "Mobile Game",
+    tags: ["C#", "Unity", "Blender"],
     description:
-      "SearShape, Search the Shape, is a  mini-game aiming to find an object identical to the big one in the center by rotating around in 3D. Build with BabylonJs, it was the first time I'd used a 3D library and typescript.",
-    image: "/projects-thumbnail/searshape.webp",
-    alt: "SearShape",
-    github: "https://github.com/TheoHiwo/SearShape",
-    live: "https://searshape-hiwoyn.vercel.app/",
+      "A Unity-based mobile game called Outrun Meteor, which is an endless runner where you control a vehicle and your goal is to go as far as possible while avoiding meteors and other obstacles.",
+    image: "/projects-thumbnail/outrun_meteor.webp",
+    alt: "Mobile Game",
+    // github: "https://github.com/TheoHiwo/SearShape",
+    // live: "https://searshape-hiwoyn.vercel.app/",
+    github: "",
+    live: "",
   },
   {
     id: 4,
@@ -124,5 +127,15 @@ export const cardsDesign: IProjectProp[] = [
     alt: "this.Portfolio",
     github: "https://github.com/TheoHiwo/portfolio",
     live: "",
+  },
+  {
+    id: 4,
+    title: "Kukotein",
+    tags: ["Blender"],
+    description: "Kukotein is a fictional character that takes the appearance of a mix between a panda and a dragon and goes to the gym. Made in 3D to create animated reels/shorts and TikTok faster. The goal is to drive customers to the online shop.",
+    image: "/projects-thumbnail/kukotein.webp",
+    alt: "Kukotein",
+    github: "",
+    live: "https://www.instagram.com/kukotein",
   },
 ];
