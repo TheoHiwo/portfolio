@@ -31,12 +31,12 @@ export interface IProjectProp {
 export const cards: IProjectProp[] = [
   {
     id: 0,
-    title: "BlueArt",
+    title: "baseBlue",
     tags: ["ReactJS", "TypeScript", "ChakraUI"],
     description:
       "An Instagram-like gallery of paintings and wonderful artworks, predominantly in tints of blue. All thanks to the Art Institute of Chicago's API.",
     image: "/projects-thumbnail/base-blue.webp",
-    alt: "blueArt",
+    alt: "baseBlue",
     github: "https://github.com/TheoHiwo/base-blue",
     live: "https://baseblue-hiwoyn.vercel.app/",
   },
