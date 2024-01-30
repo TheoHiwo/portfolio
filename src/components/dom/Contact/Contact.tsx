@@ -22,7 +22,7 @@ export default function Contact({}: Props) {
     setHovered(hovering);
   });
 
-  const email = "contact@theo-berraboukh.com"
+  const email = "theo@hiwoyn.com"
 
   return (
     <div className=" h-[700px] text-primary bg-secondary ">
