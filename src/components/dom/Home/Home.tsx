@@ -42,7 +42,7 @@ export default function Home({}: Props) {
           <EyeTrack />
         </div>
       </div>
-      <h1 className="text-3xl  text-center mb-12">Creative Coder. Frontend Developer.</h1>
+      <h1 className="text-3xl  text-center mb-12">Creative Coder. 3D Artist.</h1>
 
     </div>
   );
